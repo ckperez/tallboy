@@ -10,9 +10,20 @@ const Router = require(__dirname + '/../lib/router');
 
 const router = new Router();
 
+const server = require(__dirname + '/../lib/server');
+
+
+
 require('../index');
 
 describe('Testing tallboy router', () => {
+  // console.log(router.get);
+  //   if(router.routes.get === '/' && req.method === 'GET') {
+  //   res.writeHead(200, {'Content-Type': 'text/plain'});
+  //   res.write('success\n');
+  //   return res.end();
+  //   console.log(res);
+  // }
   it('should test our router', () => {
     expect(router.routes).to.have.property('GET');
     expect(router.routes).to.have.property('POST');
