@@ -1,0 +1,27 @@
+{
+  "name": "tallboy",
+  "version": "1.0.0",
+  "description": "Class Project - Express-like router/framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ckperez/tallboy.git"
+  },
+  "author": "Drew Ferris, Danny Stineback, Vic Benavente, Chris Perez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ckperez/tallboy/issues"
+  },
+  "homepage": "https://github.com/ckperez/tallboy#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5"
+  }
+}
