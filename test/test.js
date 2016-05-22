@@ -17,13 +17,6 @@ const server = require(__dirname + '/../lib/server');
 require('../index');
 
 describe('Testing tallboy router', () => {
-  // console.log(router.get);
-  //   if(router.routes.get === '/' && req.method === 'GET') {
-  //   res.writeHead(200, {'Content-Type': 'text/plain'});
-  //   res.write('success\n');
-  //   return res.end();
-  //   console.log(res);
-  // }
   it('should test our router', () => {
     expect(router.routes).to.have.property('GET');
     expect(router.routes).to.have.property('POST');
@@ -46,10 +39,53 @@ describe('Testing tallboy router', () => {
     .end((err, res) => {
       expect(err).to.eql(null);
       expect(res).to.have.status(200);
-      expect(res.text).to.eql('success\n');
+      expect(res.text).to.eql('get success\n');
       done();
     });
-
-  })
+  });
+  it('should write to page when post request is made', (done) => {
+    request('localhost:8008')
+    .post('/rainier')
+    .send({})
+    .end((err, res) => {
+      expect(err).to.eql(null);
+      expect(res).to.have.status(200);
+      expect(res.text).to.eql('post success\n');
+      done();
+  });
+});
+it('should write to page when put request is made', (done) => {
+  request('localhost:8008')
+  .put('/rainier')
+  .send({})
+  .end((err, res) => {
+    expect(err).to.eql(null);
+    expect(res).to.have.status(200);
+    expect(res.text).to.eql('put success\n');
+    done();
+  });
+});
+it('should write to page when patch request is made', (done) => {
+  request('localhost:8008')
+  .put('/rainier')
+  .send({})
+  .end((err, res) => {
+    expect(err).to.eql(null);
+    expect(res).to.have.status(200);
+    expect(res.text).to.eql('put success\n');
+    done();
+  });
+});
+it('should write to page when delete request is made', (done) => {
+  request('localhost:8008')
+  .delete('/rainier/oly')
+  .send({})
+  .end((err, res) => {
+    expect(err).to.eql(null);
+    expect(res).to.have.status(200);
+    expect(res.text).to.eql('delete success\n')
+    done();
+  });
+});
 
 })
