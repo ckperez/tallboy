@@ -8,7 +8,7 @@ Ready-made routing for projects using the most common RESTful verbs:
 npm install tallboy
 ```
 
-## Basic Usage 
+## Basic Usage  
 ### Require in node's http module  
 ```javascript
 var http = require('http');  
@@ -31,7 +31,6 @@ YourRouterName.get('/tutorial/:id', function(req, res) {
 ### Writing a header and client response for your routes:  
 ```javascript
         {'Content-Type': 'text/html'}  
-
         res.write('text');  
 })  
 ```
