@@ -6,9 +6,9 @@ const chaiHTTP = require('chai-http');
 const expect = chai.expect;
 chai.use(chaiHTTP);
 const request = chai.request;
-const Router = require(__dirname + '/../lib/router');
+const Tallboy = require(__dirname + '/../lib/router');
 
-const router = new Router();
+const router = new Tallboy();
 
 const server = require(__dirname + '/../lib/server');
 
