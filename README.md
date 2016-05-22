@@ -15,7 +15,7 @@ var http = require('http');
 ```  
 ### Require the tallboy framework into your project  
 ```javascript
-var Tallboy = require('tallboy');  //tallboy is a router constructor
+var Tallboy = require('tallboy');  //Tallboy is a router constructor
 ```  
 ### Instantiate your own Tallboy router  
 ```javascript
