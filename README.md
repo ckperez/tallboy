@@ -14,7 +14,7 @@ var Router = require('./router.js');
 
   - write a header {'Content-Type': 'text/html'}  
 
-    res.write('text');
+    res.write('text');  
     })  
 
 - create http server calls  
