@@ -6,9 +6,9 @@ const chaiHTTP = require('chai-http');
 const expect = chai.expect;
 chai.use(chaiHTTP);
 const request = chai.request;
-const Router = require(__dirname + '/../lib/router');
+const Tallboy = require(__dirname + '/../lib/router');
 
-const router = new Router();
+const router = new Tallboy();
 
 const server = require(__dirname + '/../lib/server');
 
@@ -52,40 +52,28 @@ describe('Testing tallboy router', () => {
       expect(res).to.have.status(200);
       expect(res.text).to.eql('post success\n');
       done();
+    });
+  });
+  it('should write to page when put request is made', (done) => {
+    request('localhost:8008')
+    .put('/rainier')
+    .send({})
+    .end((err, res) => {
+      expect(err).to.eql(null);
+      expect(res).to.have.status(200);
+      expect(res.text).to.eql('put success\n');
+      done();
+    });
+  });
+  it('should write to page when patch request is made', (done) => {
+    request('localhost:8008')
+    .put('/rainier')
+    .send({})
+    .end((err, res) => {
+      expect(err).to.eql(null);
+      expect(res).to.have.status(200);
+      expect(res.text).to.eql('put success\n');
+      done();
+    });
   });
 });
-it('should write to page when put request is made', (done) => {
-  request('localhost:8008')
-  .put('/rainier')
-  .send({})
-  .end((err, res) => {
-    expect(err).to.eql(null);
-    expect(res).to.have.status(200);
-    expect(res.text).to.eql('put success\n');
-    done();
-  });
-});
-it('should write to page when patch request is made', (done) => {
-  request('localhost:8008')
-  .put('/rainier')
-  .send({})
-  .end((err, res) => {
-    expect(err).to.eql(null);
-    expect(res).to.have.status(200);
-    expect(res.text).to.eql('put success\n');
-    done();
-  });
-});
-it('should write to page when delete request is made', (done) => {
-  request('localhost:8008')
-  .delete('/rainier/oly')
-  .send({})
-  .end((err, res) => {
-    expect(err).to.eql(null);
-    expect(res).to.have.status(200);
-    expect(res.text).to.eql('delete success\n')
-    done();
-  });
-});
-
-})
