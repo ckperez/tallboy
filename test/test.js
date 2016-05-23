@@ -52,40 +52,28 @@ describe('Testing tallboy router', () => {
       expect(res).to.have.status(200);
       expect(res.text).to.eql('post success\n');
       done();
+    });
+  });
+  it('should write to page when put request is made', (done) => {
+    request('localhost:8008')
+    .put('/rainier')
+    .send({})
+    .end((err, res) => {
+      expect(err).to.eql(null);
+      expect(res).to.have.status(200);
+      expect(res.text).to.eql('put success\n');
+      done();
+    });
+  });
+  it('should write to page when patch request is made', (done) => {
+    request('localhost:8008')
+    .put('/rainier')
+    .send({})
+    .end((err, res) => {
+      expect(err).to.eql(null);
+      expect(res).to.have.status(200);
+      expect(res.text).to.eql('put success\n');
+      done();
+    });
   });
 });
-it('should write to page when put request is made', (done) => {
-  request('localhost:8008')
-  .put('/rainier')
-  .send({})
-  .end((err, res) => {
-    expect(err).to.eql(null);
-    expect(res).to.have.status(200);
-    expect(res.text).to.eql('put success\n');
-    done();
-  });
-});
-it('should write to page when patch request is made', (done) => {
-  request('localhost:8008')
-  .put('/rainier')
-  .send({})
-  .end((err, res) => {
-    expect(err).to.eql(null);
-    expect(res).to.have.status(200);
-    expect(res.text).to.eql('put success\n');
-    done();
-  });
-});
-it('should write to page when delete request is made', (done) => {
-  request('localhost:8008')
-  .delete('/rainier/oly')
-  .send({})
-  .end((err, res) => {
-    expect(err).to.eql(null);
-    expect(res).to.have.status(200);
-    expect(res.text).to.eql('delete success\n')
-    done();
-  });
-});
-
-})
